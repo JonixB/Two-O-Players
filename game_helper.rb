@@ -4,3 +4,11 @@ def generate_question #generates a question and returns the answer
   puts "What does #{first_num} plus #{second_num} equal?"
   first_num + second_num
 end
+
+def checker(question, answer)
+  if question == answer
+    true
+  else
+    false
+  end
+end
