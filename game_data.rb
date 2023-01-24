@@ -20,15 +20,15 @@ class GameData
       else
         puts "#{current_player}: YES! You are correct."
       end
-      current_player = player2.player_name
+      @current_player = player2.player_name
+    else
+      if checker(question.answer, player_answer) == false
+        player2.lost_hp
+        puts "#{current_player}: Seriously? No!"
       else
-        if checker(question.answer, player_answer) == false
-          player2.lost_hp
-          puts "#{current_player}: Seriously? No!"
-        else
-          puts "#{current_player}: YES! You are correct."
-        end
-        current_player = player1.player_name
+        puts "#{current_player}: YES! You are correct."
+      end
+      @current_player = player1.player_name
     end
     game_over?
   end
